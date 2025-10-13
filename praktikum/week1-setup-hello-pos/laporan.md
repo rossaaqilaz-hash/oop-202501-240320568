@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 1 )
+# Laporan Praktikum Minggu 1 
 Topik: [Pengenalan Paradigma dan Setup Proyek]
 
 ## Identitas
@@ -118,25 +118,52 @@ public class HelloFunctional {
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
----
+
+1. Jelaskan bagaimana kode berjalan
+
+Ketiga program memiliki tujuan yang sama, yaitu menampilkan pesan “Hello POS World”, data nama dan NIM, serta daftar produk dengan harga dan totalnya.
+**Versi prosedural** menjalankan semua logika langsung di dalam metode main(). Data disimpan dalam array, lalu diolah menggunakan perulangan for.
+**Versi OOP (Object-Oriented Programming)** menggunakan class Produk untuk merepresentasikan data produk. Setiap objek Produk memiliki atribut nama dan harga. Pendekatan ini membuat struktur kode lebih rapi, mudah dikembangkan, dan sesuai dengan konsep pemrograman berbasis objek.
+**Versi fungsional** menggunakan List dan Stream dari Java untuk memproses data secara deklaratif. Data produk dan harga diolah dengan fungsi forEach() dan mapToInt(), tanpa perulangan eksplisit.
+Semua versi menghasilkan keluaran yang sama, namun cara pendekatannya berbeda sesuai paradigma. 
+
+2. Perbedaan pendekatan minggu ini dibanding minggu sebelumnya
+
+Minggu sebelumnya (jika masih tahap pengenalan), fokus pada struktur dasar Java seperti main(), variabel, dan output sederhana.
+Minggu ini mulai membandingkan tiga paradigma pemrograman:
+**Prosedural :** Fokus pada langkah-langkah eksekusi.
+**OOP :** Fokus pada representasi objek dan relasi antarobjek.
+**Fungsional :** Fokus pada transformasi data menggunakan fungsi tanpa mengubah state.
+Pendekatan minggu ini lebih menekankan perbedaan cara berpikir dalam menulis program, bukan hanya hasil akhir.
+
+3. Kendala yang dihadapi dan cara mengatasinya
+Beberapa kendala umum:
+- Kesalahan sintaks, terutama saat membuat class baru dan mengakses atribut.
+Solusi: Memastikan penulisan huruf besar/kecil sesuai, dan setiap class berada dalam file yang benar.
+- Import library seperti java.util.stream.* pada versi fungsional kadang terlupa.
+Solusi: Menambahkan import di bagian atas file sebelum menjalankan.
+- Perbedaan cara mengeksekusi file Java di terminal VSCode atau Git.
+Solusi: Memastikan berada di direktori yang sesuai, lalu gunakan perintah javac dan java dengan nama file yang tepat.
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
-
+Setiap paradigma memiliki cara berbeda dalam menyelesaikan masalah. Pendekatan OOP membuat program lebih terstruktur dan mudah dikembangkan, sedangkan pendekatan fungsional membuat kode lebih ringkas dan deklaratif. Melalui praktikum ini, mahasiswa memahami bahwa pemilihan paradigma sangat bergantung pada konteks dan kebutuhan program.
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(1. [Apakah OOP selalu lebih baik dari prosedural?]  
+   **Jawaban:** Tidak selalu. OOP lebih baik digunakan ketika program memiliki banyak entitas yang saling berinteraksi dan membutuhkan struktur yang terorganisir. Namun, untuk program sederhana atau skrip kecil, paradigma prosedural sering kali lebih efisien dan mudah diterapkan. 
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. [Kapan functional programming lebih cocok digunakan dibanding OOP atau prosedural?]  
+   **Jawaban:** Functional programming lebih cocok digunakan saat kita perlu mengolah data dalam jumlah besar, melakukan transformasi data yang kompleks, atau saat membutuhkan kode yang ringkas dan mudah diuji. Contohnya pada operasi koleksi data seperti filtering, mapping, dan aggregasi.
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. [Bagaimana paradigma (prosedural, OOP, fungsional) memengaruhi maintainability dan scalability aplikasi?]  
+   **Jawaban:**
+- Prosedural: Mudah dibuat tetapi sulit dikelola saat program menjadi besar karena semua logika bercampur.
+- OOP: Meningkatkan maintainability dan scalability karena kode dibagi dalam class dan object yang terstruktur dengan baik.
+- Fungsional: Membuat kode lebih singkat dan bebas efek samping, sehingga lebih mudah diuji dan di-maintain dalam sistem berskala besar.
+   
+4. [Mengapa OOP lebih cocok untuk mengembangkan aplikasi POS dibanding prosedural?]
+   **Jawaban:** Karena aplikasi POS (Point of Sale) memiliki banyak objek nyata seperti Produk, Transaksi, Kasir, dan Pelanggan. Dengan OOP, setiap entitas bisa direpresentasikan sebagai class dengan atribut dan perilakunya sendiri, membuat program lebih modular, mudah dikembangkan, dan dapat digunakan kembali.
+   
+5. [Bagaimana paradigma fungsional dapat membantu mengurangi kode berulang (*boilerplate code*)?]
+   **Jawaban:** Paradigma fungsional menggunakan konsep fungsi murni, lambda expression, dan operasi koleksi seperti map(), filter(), dan reduce(), sehingga tidak perlu menulis perulangan dan logika manual berulang kali. Ini menjadikan kode lebih singkat, jelas, dan bebas duplikasi.
