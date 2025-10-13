@@ -122,18 +122,18 @@ public class HelloFunctional {
 1. Jelaskan bagaimana kode berjalan
 
 Ketiga program memiliki tujuan yang sama, yaitu menampilkan pesan “Hello POS World”, data nama dan NIM, serta daftar produk dengan harga dan totalnya.
-**Versi prosedural** menjalankan semua logika langsung di dalam metode main(). Data disimpan dalam array, lalu diolah menggunakan perulangan for.
-**Versi OOP (Object-Oriented Programming)** menggunakan class Produk untuk merepresentasikan data produk. Setiap objek Produk memiliki atribut nama dan harga. Pendekatan ini membuat struktur kode lebih rapi, mudah dikembangkan, dan sesuai dengan konsep pemrograman berbasis objek.
-**Versi fungsional** menggunakan List dan Stream dari Java untuk memproses data secara deklaratif. Data produk dan harga diolah dengan fungsi forEach() dan mapToInt(), tanpa perulangan eksplisit.
+- **Versi prosedural** menjalankan semua logika langsung di dalam metode main(). Data disimpan dalam array, lalu diolah menggunakan perulangan for.
+- **Versi OOP (Object-Oriented Programming)** menggunakan class Produk untuk merepresentasikan data produk. Setiap objek Produk memiliki atribut nama dan harga. Pendekatan ini membuat struktur kode lebih rapi, mudah dikembangkan, dan sesuai dengan konsep pemrograman berbasis objek.
+- **Versi fungsional** menggunakan List dan Stream dari Java untuk memproses data secara deklaratif. Data produk dan harga diolah dengan fungsi forEach() dan mapToInt(), tanpa perulangan eksplisit.
 Semua versi menghasilkan keluaran yang sama, namun cara pendekatannya berbeda sesuai paradigma. 
 
 2. Perbedaan pendekatan minggu ini dibanding minggu sebelumnya
 
 Minggu sebelumnya (jika masih tahap pengenalan), fokus pada struktur dasar Java seperti main(), variabel, dan output sederhana.
 Minggu ini mulai membandingkan tiga paradigma pemrograman:
-**Prosedural :** Fokus pada langkah-langkah eksekusi.
-**OOP :** Fokus pada representasi objek dan relasi antarobjek.
-**Fungsional :** Fokus pada transformasi data menggunakan fungsi tanpa mengubah state.
+- **Prosedural :** Fokus pada langkah-langkah eksekusi.
+- **OOP :** Fokus pada representasi objek dan relasi antarobjek.
+- **Fungsional :** Fokus pada transformasi data menggunakan fungsi tanpa mengubah state.
 Pendekatan minggu ini lebih menekankan perbedaan cara berpikir dalam menulis program, bukan hanya hasil akhir.
 
 3. Kendala yang dihadapi dan cara mengatasinya
@@ -150,7 +150,7 @@ Setiap paradigma memiliki cara berbeda dalam menyelesaikan masalah. Pendekatan O
 ---
 
 ## Quiz
-(1. [Apakah OOP selalu lebih baik dari prosedural?]  
+1. [Apakah OOP selalu lebih baik dari prosedural?]  
    **Jawaban:** Tidak selalu. OOP lebih baik digunakan ketika program memiliki banyak entitas yang saling berinteraksi dan membutuhkan struktur yang terorganisir. Namun, untuk program sederhana atau skrip kecil, paradigma prosedural sering kali lebih efisien dan mudah diterapkan. 
 
 2. [Kapan functional programming lebih cocok digunakan dibanding OOP atau prosedural?]  
