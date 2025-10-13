@@ -40,15 +40,25 @@ Dalam konteks Agri-POS, OOP membantu memodelkan entitas nyata seperti Produk, Tr
 
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+// HelloProcedural.java
+public class HelloProcedural {
+   public static void main(String[] args) {
+      String nim = "240320568";
+      String nama = "Rossa Aqila";
+      String[] produk = {"Beras", "Pupuk", "Benih"};
+      int[] harga = {20000, 25000, 32000};
+      int total = 0;
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + nama);
+      System.out.println("Daftar Produk:");
+      for (int i = 0; i < produk.length; i++) {
+         System.out.println("- " + produk[i] + ": " + harga[i]);
+         total += harga[i];
+      }
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
 
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
-```
-)
----
 
 ## Hasil Eksekusi
 (Sertakan screenshot hasil eksekusi program.  
