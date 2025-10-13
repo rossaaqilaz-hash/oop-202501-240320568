@@ -41,6 +41,7 @@ Dalam konteks Agri-POS, OOP membantu memodelkan entitas nyata seperti Produk, Tr
 
 ## Kode Program
 1. Procedural
+   
 // HelloProcedural.java
 public class HelloProcedural {
    public static void main(String[] args) {
@@ -61,6 +62,7 @@ public class HelloProcedural {
 }
 
 2. OOP
+   
 // HelloOOP.java
 class Produk {
    String nama;
@@ -90,7 +92,8 @@ class Produk {
    }
 }
 
-4. Functional
+3. Functional
+   
 // HelloFunctional.java
 import java.util.*;
 import java.util.stream.*;
