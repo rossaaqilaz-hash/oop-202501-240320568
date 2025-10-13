@@ -69,9 +69,7 @@ class Produk {
       this.nama = nama;
       this.harga = harga;
    }
-}
-
-public class HelloOOP {
+} public class HelloOOP {
    public static void main(String[] args) {
       String nim = "240320568";
       String namaMhs = "Rossa Aqila";
@@ -92,8 +90,8 @@ public class HelloOOP {
    }
 }
 
-3. Functional
-   // HelloFunctional.java
+4. Functional
+// HelloFunctional.java
 import java.util.*;
 import java.util.stream.*;
 public class HelloFunctional {
