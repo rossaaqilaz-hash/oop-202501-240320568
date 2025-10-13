@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b4172d0-824f-43e7-955f-b16ddfbfac8e" /># Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
+# Laporan Praktikum Minggu 1 )
 Topik: [Pengenalan Paradigma dan Setup Proyek]
 
 ## Identitas
