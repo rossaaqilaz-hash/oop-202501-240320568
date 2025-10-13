@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1b4172d0-824f-43e7-955f-b16ddfbfac8e" /># Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
 Topik: [Pengenalan Paradigma dan Setup Proyek]
 
 ## Identitas
@@ -40,6 +40,7 @@ Dalam konteks Agri-POS, OOP membantu memodelkan entitas nyata seperti Produk, Tr
 
 
 ## Kode Program
+1. Procedural
 // HelloProcedural.java
 public class HelloProcedural {
    public static void main(String[] args) {
@@ -59,7 +60,57 @@ public class HelloProcedural {
    }
 }
 
+2. OOP
+// HelloOOP.java
+class Produk {
+   String nama;
+   int harga;
+   Produk(String nama, int harga) {
+      this.nama = nama;
+      this.harga = harga;
+   }
+}
 
+public class HelloOOP {
+   public static void main(String[] args) {
+      String nim = "240320568";
+      String namaMhs = "Rossa Aqila";
+      Produk[] daftar = {
+         new Produk("Beras", 20000),
+         new Produk("Pupuk", 25000),
+         new Produk("Benih", 32000)
+      };
+      int total = 0;
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + namaMhs);
+      System.out.println("Daftar Produk:");
+      for (Produk p : daftar) {
+         System.out.println("- " + p.nama + ": " + p.harga);
+         total += p.harga;
+      }
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
+
+3. Functional
+   // HelloFunctional.java
+import java.util.*;
+import java.util.stream.*;
+public class HelloFunctional {
+   public static void main(String[] args) {
+      String nim = "240320568";
+      String nama = "Rossa Aqila";
+      List<String> produk = Arrays.asList("Beras", "Pupuk", "Benih");
+      List<Integer> harga = Arrays.asList(20000, 25000, 32000);
+      System.out.println("Hello POS World");
+      System.out.println("NIM: " + nim + ", Nama: " + nama);
+      System.out.println("Daftar Produk:");
+      IntStream.range(0, produk.size())
+         .forEach(i -> System.out.println("- " + produk.get(i) + ": " + harga.get(i)));
+      int total = harga.stream().mapToInt(Integer::intValue).sum();
+      System.out.println("Total harga semua produk: " + total);
+   }
+}
 ## Hasil Eksekusi
 (Sertakan screenshot hasil eksekusi program.  
 ![Screenshot hasil](screenshots/hasil.png)
