@@ -112,9 +112,9 @@ public class HelloFunctional {
    }
 }
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
+[(Sertakan screenshot hasil eksekusi program.  
 ![Screenshot hasil](screenshots/hasil.png)
-)
+)](https://github.com/rossaaqilaz-hash/oop-202501-240320568/tree/f0f967cb378c0fa62e0f947c8b6b107a61a7a444/praktikum/week1-setup-hello-pos/screenshots)
 ---
 
 ## Analisis
