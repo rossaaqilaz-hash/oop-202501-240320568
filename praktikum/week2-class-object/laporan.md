@@ -47,14 +47,96 @@ Dalam konteks Agri-POS, produk pertanian seperti benih, pupuk, dan alat pertania
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+1. Produk.java
+   package model;
 
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
-```
-)
+public class Produk {
+    private String kode;
+    private String nama;
+    private double harga;
+    private int stok;
+
+    public Produk(String kode, String nama, double harga, int stok) {
+        this.kode = kode;
+        this.nama = nama;
+        this.harga = harga;
+        this.stok = stok;
+    }
+
+    public String getKode() { return kode; }
+    public void setKode(String kode) { this.kode = kode; }
+
+    public String getNama() { return nama; }
+    public void setNama(String nama) { this.nama = nama; }
+
+    public double getHarga() { return harga; }
+    public void setHarga(double harga) { this.harga = harga; }
+
+    public int getStok() { return stok; }
+    public void setStok(int stok) { this.stok = stok; }
+
+    public void tambahStok(int jumlah) {
+        this.stok += jumlah;
+    }
+
+    public void kurangiStok(int jumlah) {
+        if (this.stok >= jumlah) {
+            this.stok -= jumlah;
+        } else {
+            System.out.println("Stok tidak mencukupi!");
+        }
+    }public static void main(String[] args) {
+    Produk p1 = new Produk("PPK", "Pupuk konsentrat", 320000, 100);
+    System.out.println("Kode: " + p1.kode);
+    System.out.println("Nama: " + p1.nama);
+    System.out.println("Harga: " + p1.harga);
+    System.out.println("Stok: " + p1.stok);
+}
+
+}
+
+2. CreditBy.java
+   package util;
+
+public class CreditBy {
+    public static void print(String nama, String nim) {
+        System.out.println("\ncredit by: " + nama + " - " + nim);
+    }
+}
+
+3. MainProduk.java
+   // mainproduk.java
+
+import model.Produk;
+import util.CreditBy;
+
+public class MainProduk {
+    public static void main(String[] args) {
+        Produk p1 = new Produk("BNH-001", "Benih Tomat IR64", 35000, 100);
+        Produk p2 = new Produk("PPU-101", "Pupuk urea 50kg", 420000, 45);
+        Produk p3 = new Produk("PPK-501", "Pupuk Konsentrat 50kg", 450000, 20);
+
+        System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok: " + p1.getStok());
+        System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
+        System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok: " + p3.getStok());
+
+        p1.kurangiStok(25);
+        p2.kurangiStok(5);
+        p3.tambahStok(10);
+
+        System.out.println("\n=== Setelah Update Stok ===");
+        System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok: " + p1.getStok());
+        System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
+        System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok: " + p3.getStok());
+
+
+        // Tampilkan identitas mahasiswa nama dan nim
+        CreditBy.print("Rossa Aqila Zahra", "240320568");
+        
+    }
+}
+   
+
 ---
 
 ## Hasil Eksekusi
