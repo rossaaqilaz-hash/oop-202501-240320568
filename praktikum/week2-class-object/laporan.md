@@ -66,24 +66,36 @@ System.out.println(p1.getNama());
 ## Analisis
 (
 - Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
+- Pada praktikum minggu ini, pendekatan yang digunakan berbeda dibandingkan minggu sebelumnya. Jika pada minggu sebelumnya program masih menggunakan cara prosedural, di mana seluruh logika dan data dikelola dalam satu file utama tanpa pembagian tanggung jawab yang jelas, maka pada minggu ini sudah diterapkan pendekatan berorientasi objek (Object-Oriented Programming / OOP). Dengan pendekatan ini, program dibagi menjadi beberapa class sesuai dengan fungsi dan perannya masing-masing, seperti Produk untuk representasi data produk, CreditBy untuk menampilkan identitas, serta MainProduk sebagai pengendali utama program. Pendekatan OOP membuat program menjadi lebih terstruktur, modular, dan mudah dikembangkan, karena setiap bagian dapat diperbarui atau digunakan ulang tanpa harus mengubah keseluruhan kode. Hal ini juga meningkatkan pemahaman konsep dasar OOP seperti enkapsulasi, objek, dan method.
+  
+- Selama praktikum, terdapat beberapa kendala yang muncul, terutama terkait pengaturan struktur folder dan penggunaan package. Salah satu kendala yang sering terjadi adalah error pada saat kompilasi atau import class karena letak file tidak sesuai dengan deklarasi package di bagian atas kode. Selain itu, kesalahan dalam memahami hubungan antar class juga dapat menyebabkan kebingungan dalam proses pemanggilan method. Untuk mengatasinya, penulis memastikan bahwa setiap file Java ditempatkan pada direktori yang sesuai dengan nama package-nya, misalnya com/upb/agripos/model untuk kelas Produk. Selain itu, memahami konsep dasar relasi antar class dan cara kerja import juga membantu memperlancar proses debugging. Dengan latihan dan pemahaman struktur OOP yang lebih baik, kendala tersebut akhirnya dapat diatasi.
 )
 ---
 
 ## Kesimpulan
 (Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+Contoh: Dengan menggunakan class dan object, program menjadi:
+- Lebih terstruktur karena setiap komponen memiliki tanggung jawabnya sendiri.
+- Lebih mudah dikembangkan, misalnya jika ingin menambahkan fitur transaksi atau stok otomatis.
+- Lebih modular, karena setiap class dapat digunakan ulang di proyek lain (contoh: class Produk dapat dipakai di aplikasi POS, inventori, atau e-commerce).
 
 ---
 
 ## Quiz
 1. [Mengapa atribut sebaiknya dideklarasikan sebagai private dalam class?]  
-   **Jawaban:** …  
+   **Jawaban:** Agar data tidak bisa diubah secara langsung dari luar class, melainkan hanya melalui method khusus (getter/setter). Ini menjaga keamanan data (enkapsulasi) dan mencegah perubahan yang tidak diinginkan.
 
 2. [pa fungsi getter dan setter dalam enkapsulasi?]  
-   **Jawaban:** …  
+   **Jawaban:**
+   - getter digunakan untuk mengambil nilai atribut private.
+   - Setter digunakan untuk mengubah nilai atribut private dengan pengawasan (validasi jika perlu).
+Dengan getter dan setter, akses terhadap data menjadi terkendali dan aman.
 
 3. [Bagaimana cara class Produk mendukung pengembangan aplikasi POS yang lebih kompleks?]  
-   **Jawaban:** …  
+   **Jawaban:** Kelas Produk menjadi komponen dasar (model) dalam sistem POS. Dengan atribut dan method yang sudah ada, kita dapat menambahkan fitur seperti:
+- Transaksi penjualan dan pembelian.
+- Manajemen stok otomatis.
+- Integrasi dengan database untuk menyimpan data produk.
+- Pembuatan laporan penjualan.
+Sehingga Produk bisa menjadi pondasi dari sistem POS yang terorganisir dan scalable.
   
