@@ -48,7 +48,7 @@ Dalam konteks Agri-POS, produk pertanian seperti benih, pupuk, dan alat pertania
 
 ## Kode Program
 1. Produk.java
-   ``` java
+``` java
    package model;
 
 public class Produk {
@@ -57,7 +57,7 @@ public class Produk {
     private double harga;
     private int stok;
 
-    public Produk(String kode, String nama, double harga, int stok) {
+public Produk(String kode, String nama, double harga, int stok) {
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;
@@ -149,8 +149,9 @@ public class MainProduk {
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
+
+- Program ini berjalan dengan menggunakan konsep **pemrograman berorientasi objek (OOP)** yang terdiri dari tiga kelas utama, yaitu `Produk`, `CreditBy`, dan `MainProduk`. Jalannya program dimulai dari kelas `MainProduk`, karena di dalamnya terdapat method `main()` sebagai titik awal eksekusi. Pada bagian ini, tiga objek dari kelas `Produk` dibuat menggunakan *constructor*, masing-masing menyimpan data produk berupa kode, nama, harga, dan stok. Setelah objek berhasil dibuat, program menampilkan informasi setiap produk ke layar dengan memanggil method *getter* seperti `getKode()`, `getNama()`, `getHarga()`, dan `getStok()` untuk mengambil nilai atribut yang bersifat *private*. Selanjutnya, program memanggil method `print()` dari kelas `CreditBy` untuk menampilkan identitas pembuat program, yaitu NIM dan nama mahasiswa. Karena method tersebut bersifat *static*, pemanggilannya tidak memerlukan pembuatan objek baru. Secara keseluruhan, alur program berjalan dengan terstruktur: membuat objek produk, menampilkan datanya, lalu menampilkan identitas pembuat program. Melalui cara kerja ini, terlihat bahwa setiap kelas memiliki peran yang jelas dan saling berinteraksi, sehingga program menjadi lebih rapi, mudah dipahami, dan mudah dikembangkan di kemudian hari.
+ 
 - Pada praktikum minggu ini, pendekatan yang digunakan berbeda dibandingkan minggu sebelumnya. Jika pada minggu sebelumnya program masih menggunakan cara prosedural, di mana seluruh logika dan data dikelola dalam satu file utama tanpa pembagian tanggung jawab yang jelas, maka pada minggu ini sudah diterapkan pendekatan berorientasi objek (Object-Oriented Programming / OOP). Dengan pendekatan ini, program dibagi menjadi beberapa class sesuai dengan fungsi dan perannya masing-masing, seperti Produk untuk representasi data produk, CreditBy untuk menampilkan identitas, serta MainProduk sebagai pengendali utama program. Pendekatan OOP membuat program menjadi lebih terstruktur, modular, dan mudah dikembangkan, karena setiap bagian dapat diperbarui atau digunakan ulang tanpa harus mengubah keseluruhan kode. Hal ini juga meningkatkan pemahaman konsep dasar OOP seperti enkapsulasi, objek, dan method.
   
 - Selama praktikum, terdapat beberapa kendala yang muncul, terutama terkait pengaturan struktur folder dan penggunaan package. Salah satu kendala yang sering terjadi adalah error pada saat kompilasi atau import class karena letak file tidak sesuai dengan deklarasi package di bagian atas kode. Selain itu, kesalahan dalam memahami hubungan antar class juga dapat menyebabkan kebingungan dalam proses pemanggilan method. Untuk mengatasinya, penulis memastikan bahwa setiap file Java ditempatkan pada direktori yang sesuai dengan nama package-nya, misalnya com/upb/agripos/model untuk kelas Produk. Selain itu, memahami konsep dasar relasi antar class dan cara kerja import juga membantu memperlancar proses debugging. Dengan latihan dan pemahaman struktur OOP yang lebih baik, kendala tersebut akhirnya dapat diatasi.
@@ -168,7 +169,7 @@ public class MainProduk {
 1. [Mengapa atribut sebaiknya dideklarasikan sebagai private dalam class?]  
    **Jawaban:** Agar data tidak bisa diubah secara langsung dari luar class, melainkan hanya melalui method khusus (getter/setter). Ini menjaga keamanan data (enkapsulasi) dan mencegah perubahan yang tidak diinginkan.
 
-2. [pa fungsi getter dan setter dalam enkapsulasi?]  
+2. [Apa fungsi getter dan setter dalam enkapsulasi?]  
    **Jawaban:**
    - getter digunakan untuk mengambil nilai atribut private.
    - Setter digunakan untuk mengubah nilai atribut private dengan pengawasan (validasi jika perlu).
