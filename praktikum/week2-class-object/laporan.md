@@ -78,12 +78,12 @@ Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur 
 ---
 
 ## Quiz
-(1. [Mengapa atribut sebaiknya dideklarasikan sebagai private dalam class?]  
+1. [Mengapa atribut sebaiknya dideklarasikan sebagai private dalam class?]  
    **Jawaban:** …  
 
 2. [pa fungsi getter dan setter dalam enkapsulasi?]  
    **Jawaban:** …  
 
 3. [Bagaimana cara class Produk mendukung pengembangan aplikasi POS yang lebih kompleks?]  
-   **Jawaban:** …  )
+   **Jawaban:** …  
   
