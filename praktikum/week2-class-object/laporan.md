@@ -48,6 +48,7 @@ Dalam konteks Agri-POS, produk pertanian seperti benih, pupuk, dan alat pertania
 
 ## Kode Program
 1. Produk.java
+   ``` java
    package model;
 
 public class Produk {
@@ -94,17 +95,21 @@ public class Produk {
 }
 
 }
+```
 
 2. CreditBy.java
-   package util;
+  ```java
+package util;
 
 public class CreditBy {
     public static void print(String nama, String nim) {
         System.out.println("\ncredit by: " + nama + " - " + nim);
     }
 }
+```
 
 3. MainProduk.java
+``` java
 // mainproduk.java
 
 import model.Produk;
@@ -135,7 +140,7 @@ public class MainProduk {
         
     }
 }
-   
+```
 
 ---
 
