@@ -105,7 +105,7 @@ public class CreditBy {
 }
 
 3. MainProduk.java
-   // mainproduk.java
+// mainproduk.java
 
 import model.Produk;
 import util.CreditBy;
@@ -155,8 +155,6 @@ public class MainProduk {
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: Dengan menggunakan class dan object, program menjadi:
 - Lebih terstruktur karena setiap komponen memiliki tanggung jawabnya sendiri.
 - Lebih mudah dikembangkan, misalnya jika ingin menambahkan fitur transaksi atau stok otomatis.
 - Lebih modular, karena setiap class dapat digunakan ulang di proyek lain (contoh: class Produk dapat dipakai di aplikasi POS, inventori, atau e-commerce).
