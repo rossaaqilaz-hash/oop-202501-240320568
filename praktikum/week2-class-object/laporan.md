@@ -140,9 +140,7 @@ public class MainProduk {
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+(https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/bd56748be467370ab9d437093bc0dbf6f7898125/praktikum/week2-class-object/screenshots/Screenshot-MainProduk.png)
 ---
 
 ## Analisis
