@@ -1,33 +1,52 @@
 # Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+Topik: [Polymorphism (Info Produk)]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Rossa Aqila Zahra]
+- NIM   : [240320568]
+- Kelas : [3DSRA]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
-
+- Mahasiswa mampu **menjelaskan konsep polymorphism** dalam OOP.  
+- Mahasiswa mampu **membedakan method overloading dan overriding**.  
+- Mahasiswa mampu **mengimplementasikan polymorphism (overriding, overloading, dynamic binding)** dalam program.  
+- Mahasiswa mampu **menganalisis contoh kasus polymorphism** pada sistem nyata (Agri-POS).  
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+olymorphism berarti “banyak bentuk” dan memungkinkan objek yang berbeda merespons panggilan method yang sama dengan cara yang berbeda.  
+1. **Overloading** → mendefinisikan method dengan nama sama tetapi parameter berbeda.  
+2. **Overriding** → subclass mengganti implementasi method dari superclass.  
+3. **Dynamic Binding** → pemanggilan method ditentukan saat runtime, bukan compile time.  
+
+Dalam konteks Agri-POS, misalnya:  
+- Method `getInfo()` pada `Produk` dioverride oleh `Benih`, `Pupuk`, `AlatPertanian` untuk menampilkan detail spesifik.  
+- Method `tambahStok()` bisa dibuat overload dengan parameter berbeda (int, double).  
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. **Overloading**  
+   - Tambahkan method `tambahStok(int jumlah)` dan `tambahStok(double jumlah)` pada class `Produk`.  
+
+2. **Overriding**  
+   - Tambahkan method `getInfo()` pada superclass `Produk`.  
+   - Override method `getInfo()` pada subclass `Benih`, `Pupuk`, dan `AlatPertanian`.  
+
+3. **Dynamic Binding**  
+   - Buat array `Produk[] daftarProduk` yang berisi objek `Benih`, `Pupuk`, dan `AlatPertanian`.  
+   - Loop array tersebut dan panggil `getInfo()`. Perhatikan bagaimana Java memanggil method sesuai jenis objek aktual.  
+
+4. **Main Class**  
+   - Buat `MainPolymorphism.java` untuk mendemonstrasikan overloading, overriding, dan dynamic binding.  
+
+5. **CreditBy**  
+   - Tetap panggil `CreditBy.print("<NIM>", "<Nama>")`.  
+
+6. **Commit dan Push**  
+   - Commit dengan pesan: `week4-polymorphism`.  
 
 ---
 
@@ -63,11 +82,11 @@ Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
+(1. [Apa perbedaan overloading dan overriding?]  
    **Jawaban:** …  
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
+2. [Bagaimana Java menentukan method mana yang dipanggil dalam dynamic binding?]  
    **Jawaban:** …  
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
+3. [Berikan contoh kasus polymorphism dalam sistem POS selain produk pertanian.]  
    **Jawaban:** …  )
