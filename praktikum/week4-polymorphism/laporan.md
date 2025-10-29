@@ -82,11 +82,11 @@ Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur 
 ---
 
 ## Quiz
-(1. [Apa perbedaan overloading dan overriding?]  
+1. [Apa perbedaan overloading dan overriding?]  
    **Jawaban:** …  
 
 2. [Bagaimana Java menentukan method mana yang dipanggil dalam dynamic binding?]  
    **Jawaban:** …  
 
 3. [Berikan contoh kasus polymorphism dalam sistem POS selain produk pertanian.]  
-   **Jawaban:** …  )
+   **Jawaban:** …  
