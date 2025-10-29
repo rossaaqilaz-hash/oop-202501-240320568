@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
+# Laporan Praktikum Minggu 3 (sesuaikan minggu ke berapa?)
 Topik: [Inheritance (Kategori Produk)]
 
 ## Identitas
