@@ -52,6 +52,8 @@ Dalam konteks Agri-POS, kita dapat membuat class `Produk` sebagai superclass, ke
 ## Kode Program
 ### Benih.java
 ```java
+//Subclass benih
+
 package com.upb.agripos.model;
 
 public class Benih extends Produk {
@@ -64,11 +66,18 @@ public class Benih extends Produk {
 
     public String getVarietas() { return varietas; }
     public void setVarietas(String varietas) { this.varietas = varietas; }
+
+    //Method tambahan latihan mandiri
+    public void deskripsi() {
+        System.out.println("Benih varietas " + varietas + " memiliki keunggulan daya tahan tumbuh tinggi");
+    }
 }
 ```
 
 ### Pupuk.java
 ```java
+//subclass pupuk
+
 package com.upb.agripos.model;
 
 public class Pupuk extends Produk {
@@ -81,6 +90,21 @@ public class Pupuk extends Produk {
 
     public String getJenis() { return jenis; }
     public void setJenis(String jenis) { this.jenis = jenis; }
+
+    //method tambahan
+    public void deskripsi() {
+        System.out.println("Pupuk jenis " + jenis + " direkomendasikan untuk tanaman padi dan jagung");
+    }
+
+    public static void main(String[] args) {
+        Pupuk pupuk = new Pupuk("PK-001", "Urea", 75000, 50, "Nitrogen");
+        System.out.println("Kode: " + pupuk.getKode());
+        System.out.println("Nama: " + pupuk.getNama());
+        System.out.println("Harga: Rp" + pupuk.getHarga());
+        System.out.println("Stok: " + pupuk.getStok());
+        System.out.println("Jenis: " + pupuk.getJenis());
+        pupuk.deskripsi();
+    }
 }
 ```
 
@@ -98,11 +122,18 @@ public class AlatPertanian extends Produk {
 
     public String getMaterial() { return material; }
     public void setMaterial(String material) { this.material = material; }
+
+    //method tambahan
+    public void deskripsi() {
+        System.out.println("Alat pertanian cangkul berbahan " + material + " ini kuat dan tahan lama ");
+    }
 }
 ```
 
 ### MainInheritance.java
 ```java
+//MainInheritance
+
 package com.upb.agripos;
 
 import com.upb.agripos.model.*;
@@ -110,24 +141,50 @@ import com.upb.agripos.util.CreditBy;
 
 public class MainInheritance {
     public static void main(String[] args) {
+        // Inisialisasi objek produk
         Benih b = new Benih("BNH-001", "Benih Padi IR64", 25000, 100, "IR64");
         Pupuk p = new Pupuk("PPK-101", "Pupuk Urea", 350000, 40, "Urea");
         AlatPertanian a = new AlatPertanian("ALT-501", "Cangkul Baja", 90000, 15, "Baja");
 
-        System.out.println("Benih: " + b.getNama() + " Varietas: " + b.getVarietas());
-        System.out.println("Pupuk: " + p.getNama() + " Jenis: " + p.getJenis());
-        System.out.println("Alat Pertanian: " + a.getNama() + " Material: " + a.getMaterial());
+        // Header
+        System.out.println("==============================");
+        System.out.println("        Program Agri-POS     ");
+        System.out.println("==============================");
+        
+        // Daftar Produk
+        System.out.println("\n=== Daftar Produk ===");
+        System.out.println("1. Benih    : " + b.getNama() + " (Varietas: " + b.getVarietas() + ")");
+        System.out.println("2. Pupuk    : " + p.getNama() + " (Jenis: " + p.getJenis() + ")");
+        System.out.println("3. Alat     : " + a.getNama() + " (Material: " + a.getMaterial() + ")");
+        System.out.println("------------------------------");
+        
+        // Deskripsi Produk
+        System.out.println("\n=== Deskripsi Produk ===");
+        b.deskripsi();
+        p.deskripsi();
+        a.deskripsi();
+        
+        // Footer
+        System.out.println("\n==============================");
+        CreditBy.print("Rossa Aqila Zahra", "240320568");
+        System.out.println("==============================");
+    }
+}
+```
+### CreaditBy.java
+```java
+package com.upb.agripos.util;
 
-        CreditBy.print("<240320568>", "<Rossa Aqila Zahra>");
+public class CreditBy {
+    public static void print(String nama, String nim) {
+        System.out.println("\nCredit by: " + nama + " - " + nim);
     }
 }
 ```
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+![MainInheritance](https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/060a8fd452f202eb281bda8cd8211186043a5228/praktikum/week3-inheritance/screenshots/MainInheritance.png)
 ---
 
 ## Analisis
@@ -171,7 +228,7 @@ public Benih(String kode, String nama, double harga, int stok, String varietas) 
    }
 
 
-4. [Berikan contoh kasus di POS pertanian selain Benih, Pupuk, dan Alat Pertanian yang bisa dijadikan subclass.]
+3. [Berikan contoh kasus di POS pertanian selain Benih, Pupuk, dan Alat Pertanian yang bisa dijadikan subclass.]
    **Jawaban:** Contoh lain yang bisa dijadikan subclass adalah ObatTanaman yang memiliki atribut tambahan seperti kandunganAktif atau tanggalKadaluarsa.
    Misalnya:
 
