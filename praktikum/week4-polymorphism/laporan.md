@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 4 (sesuaikan minggu ke berapa?)
+# Laporan Praktikum Minggu 4 
 Topik: [Polymorphism (Info Produk)]
 
 ## Identitas
@@ -124,6 +124,7 @@ public class Pupuk extends Produk {
         return "Pupuk: " + super.getInfo() + ", Jenis: " + jenis;
     }
 }
+```
 
 ### AlatPertanian.java 
 ```java
@@ -144,8 +145,9 @@ public class AlatPertanian extends Produk {
         return "Alat Pertanian: " + super.getInfo() + ", Material: " + material;
     }
 }
+```
 
-### CresitBy.java
+### CreditBy.java
 ```java
 package com.upb.agripos.util;
 
@@ -154,6 +156,7 @@ public class CreditBy {
         System.out.println("\nCredit by: " + nama + " - " + nim);
     }
 }
+```
 
 ### MainPolymorphism.java
 ```java
@@ -195,40 +198,37 @@ public class MainPolymorphism {
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-1. Overloading pada class Produk dengan dua method tambahStok() yang memiliki parameter berbeda (int dan double). Hal ini menunjukkan bahwa satu nama method bisa memiliki perilaku berbeda tergantung parameter yang diberikan.
+- Jelaskan bagaimana kode berjalan.
+  1. Overloading pada class Produk dengan dua method tambahStok() yang memiliki parameter berbeda (int dan double). Hal ini menunjukkan bahwa satu nama method bisa memiliki perilaku berbeda tergantung parameter yang diberikan.
+  2. Overriding diterapkan di subclass (Benih, Pupuk, dan AlatPertanian) yang mengganti implementasi method getInfo() dari superclass Produk. Ini memungkinkan tiap objek menampilkan informasi sesuai jenisnya masing-masing.
+  3. Dynamic Binding terjadi ketika method getInfo() dipanggil dari array Produk[] daftarProduk. Walaupun referensinya bertipe Produk, Java secara dinamis menentukan method mana yang dipanggil berdasarkan objek aktualnya (Benih, Pupuk, atau AlatPertanian) saat runtime.
 
-2. Overriding diterapkan di subclass (Benih, Pupuk, dan AlatPertanian) yang mengganti implementasi method getInfo() dari superclass Produk. Ini memungkinkan tiap objek menampilkan informasi sesuai jenisnya masing-masing.
+- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.
+  Minggu sebelumnya fokus pada pewarisan struktur antar kelas (superclass dan subclass) dan Minggu ini fokus pada perilaku yang berbeda untuk method yang sama, yang membuat program lebih fleksibel dan mudah diperluas.
 
-3. Dynamic Binding terjadi ketika method getInfo() dipanggil dari array Produk[] daftarProduk. Walaupun referensinya bertipe Produk, Java secara dinamis menentukan method mana yang dipanggil berdasarkan objek aktualnya (Benih, Pupuk, atau AlatPertanian) saat runtime.
-
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Minggu sebelumnya fokus pada pewarisan struktur antar kelas (superclass dan subclass).
-- Minggu ini fokus pada perilaku yang berbeda untuk method yang sama, yang membuat program lebih fleksibel dan mudah diperluas.
-
-- Kendala yang dihadapi dan cara mengatasinya.  
-Awalnya kesulitan memahami perbedaan antara overloading dan overriding.
+- Kendala yang dihadapi dan cara mengatasinya.
+  Awalnya kesulitan memahami perbedaan antara overloading dan overriding.
 Solusinya adalah dengan melihat parameter method dan posisi class-nya — jika di class yang sama dengan parameter berbeda → overloading; jika di subclass dengan method yang sama → overriding.
-)
+
 ---
 
 ## Kesimpulan
 Tuliskan kesimpulan dari praktikum minggu ini.  
-Polymorphism memungkinkan satu interface digunakan untuk berbagai bentuk objek, sehingga program menjadi lebih dinamis, efisien, dan mudah diperluas.
+- Polymorphism memungkinkan satu interface digunakan untuk berbagai bentuk objek, sehingga program menjadi lebih dinamis, efisien, dan mudah diperluas.
 Dengan overloading, method bisa memiliki nama sama tetapi parameter berbeda untuk menyesuaikan kebutuhan dan dengan overriding, subclass bisa mendefinisikan perilaku khusus tanpa mengubah struktur superclass.
 Konsep dynamic binding memastikan bahwa method yang sesuai dengan tipe objek aktual dipanggil pada runtime, bukan saat kompilasi.
 Dalam konteks Agri-POS, polymorphism membuat sistem pengelolaan produk menjadi lebih fleksibel, karena setiap jenis produk dapat memiliki perilaku spesifik sendiri.
----
+
 
 ## Quiz
 1. [Apa perbedaan overloading dan overriding?]  
-   **Jawaban:** Overloading terjadi ketika ada dua atau lebih method dengan nama sama tetapi parameter berbeda dalam satu class.
-
-Overriding terjadi ketika subclass mengganti implementasi method dari superclass dengan nama dan parameter yang sama.
+   **Jawaban:**
+   Overloading terjadi ketika ada dua atau lebih method dengan nama sama tetapi parameter berbeda dalam satu class. Overriding terjadi ketika subclass mengganti implementasi method dari superclass dengan nama dan parameter yang sama.
 
 2. [Bagaimana Java menentukan method mana yang dipanggil dalam dynamic binding?]  
-   **Jawaban:** Java menentukan method yang dipanggil berdasarkan tipe objek aktual yang direferensikan, bukan berdasarkan tipe referensinya. Proses ini dilakukan saat runtime, bukan saat compile time.
+   **Jawaban:**
+   Java menentukan method yang dipanggil berdasarkan tipe objek aktual yang direferensikan, bukan berdasarkan tipe referensinya. Proses ini dilakukan saat runtime, bukan saat compile time.
 
 3. [Berikan contoh kasus polymorphism dalam sistem POS selain produk pertanian.]  
-   **Jawaban:** Dalam sistem POS restoran: class MenuItem bisa dioverride oleh subclass Makanan, Minuman, dan Dessert. Ketika getInfo() dipanggil, masing-masing menampilkan informasi berbeda sesuai jenis item (misalnya ukuran porsi atau suhu minuman).
+   **Jawaban:**
+   Dalam sistem POS restoran: class MenuItem bisa dioverride oleh subclass Makanan, Minuman, dan Dessert. Ketika getInfo() dipanggil, masing-masing menampilkan informasi berbeda sesuai jenis item (misalnya ukuran porsi atau suhu minuman).
