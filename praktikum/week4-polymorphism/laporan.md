@@ -53,6 +53,8 @@ Dalam konteks Agri-POS, misalnya:
 ## Kode Program
 ### Produk.java (Overloading & getInfo default)
 ```java
+//overloading dan getInfo default
+
 package com.upb.agripos.model;
 
 public class Produk {
@@ -84,6 +86,8 @@ public class Produk {
 
 ### Benih.java (Overriding)
 ```java
+//overriding
+
 package com.upb.agripos.model;
 
 public class Benih extends Produk {
@@ -101,8 +105,60 @@ public class Benih extends Produk {
 }
 ```
 
+### Pupuk.java 
+```java
+//overriding pupuk
+
+package com.upb.agripos.model;
+
+public class Pupuk extends Produk {
+    private String jenis;
+
+    public Pupuk(String kode, String nama, double harga, int stok, String jenis) {
+        super(kode, nama, harga, stok);
+        this.jenis = jenis;
+    }
+
+    @Override
+    public String getInfo() {
+        return "Pupuk: " + super.getInfo() + ", Jenis: " + jenis;
+    }
+}
+
+### AlatPertanian.java 
+```java
+//overriding alat pertanian
+
+package com.upb.agripos.model;
+
+public class AlatPertanian extends Produk {
+    private String material;
+
+    public AlatPertanian(String kode, String nama, double harga, int stok, String material) {
+        super(kode, nama, harga, stok);
+        this.material = material;
+    }
+
+    @Override
+    public String getInfo() {
+        return "Alat Pertanian: " + super.getInfo() + ", Material: " + material;
+    }
+}
+
+### CresitBy.java
+```java
+package com.upb.agripos.util;
+
+public class CreditBy {
+    public static void print(String nama, String nim) {
+        System.out.println("\nCredit by: " + nama + " - " + nim);
+    }
+}
+
 ### MainPolymorphism.java
 ```java
+//main program polymorphism
+
 package com.upb.agripos;
 
 import com.upb.agripos.model.*;
@@ -110,6 +166,11 @@ import com.upb.agripos.util.CreditBy;
 
 public class MainPolymorphism {
     public static void main(String[] args) {
+        
+        System.out.println("=== Program Agri-POS ===");
+        System.out.println("------------------------");
+        System.out.println("Daftar Produk: ");
+        
         Produk[] daftarProduk = {
             new Benih("BNH-001", "Benih Padi IR64", 25000, 100, "IR64"),
             new Pupuk("PPK-101", "Pupuk Urea", 350000, 40, "Urea"),
@@ -120,7 +181,7 @@ public class MainPolymorphism {
             System.out.println(p.getInfo()); // Dynamic Binding
         }
 
-        CreditBy.print("<240320568", "<Rossa Aqila Zahra>");
+        CreditBy.print("Rossa Aqila Zahra", "240320568");
     }
 }
 ```
@@ -129,30 +190,45 @@ public class MainPolymorphism {
 
 ## Hasil Eksekusi
 (Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
+![MainPolymorphism](https://github.com/rossaaqilaz-hash/oop-202501-240320568/tree/1b71815e4fcb5bebc00b6bd598e6ba86b465e9ba/praktikum/week4-polymorphism/screenshots)
 )
 ---
 
 ## Analisis
 (
 - Jelaskan bagaimana kode berjalan.  
+1. Overloading pada class Produk dengan dua method tambahStok() yang memiliki parameter berbeda (int dan double). Hal ini menunjukkan bahwa satu nama method bisa memiliki perilaku berbeda tergantung parameter yang diberikan.
+
+2. Overriding diterapkan di subclass (Benih, Pupuk, dan AlatPertanian) yang mengganti implementasi method getInfo() dari superclass Produk. Ini memungkinkan tiap objek menampilkan informasi sesuai jenisnya masing-masing.
+
+3. Dynamic Binding terjadi ketika method getInfo() dipanggil dari array Produk[] daftarProduk. Walaupun referensinya bertipe Produk, Java secara dinamis menentukan method mana yang dipanggil berdasarkan objek aktualnya (Benih, Pupuk, atau AlatPertanian) saat runtime.
+
 - Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+- Minggu sebelumnya fokus pada pewarisan struktur antar kelas (superclass dan subclass).
+- Minggu ini fokus pada perilaku yang berbeda untuk method yang sama, yang membuat program lebih fleksibel dan mudah diperluas.
+
 - Kendala yang dihadapi dan cara mengatasinya.  
+Awalnya kesulitan memahami perbedaan antara overloading dan overriding.
+Solusinya adalah dengan melihat parameter method dan posisi class-nya — jika di class yang sama dengan parameter berbeda → overloading; jika di subclass dengan method yang sama → overriding.
 )
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
-
+Tuliskan kesimpulan dari praktikum minggu ini.  
+Polymorphism memungkinkan satu interface digunakan untuk berbagai bentuk objek, sehingga program menjadi lebih dinamis, efisien, dan mudah diperluas.
+Dengan overloading, method bisa memiliki nama sama tetapi parameter berbeda untuk menyesuaikan kebutuhan dan dengan overriding, subclass bisa mendefinisikan perilaku khusus tanpa mengubah struktur superclass.
+Konsep dynamic binding memastikan bahwa method yang sesuai dengan tipe objek aktual dipanggil pada runtime, bukan saat kompilasi.
+Dalam konteks Agri-POS, polymorphism membuat sistem pengelolaan produk menjadi lebih fleksibel, karena setiap jenis produk dapat memiliki perilaku spesifik sendiri.
 ---
 
 ## Quiz
 1. [Apa perbedaan overloading dan overriding?]  
-   **Jawaban:** …  
+   **Jawaban:** Overloading terjadi ketika ada dua atau lebih method dengan nama sama tetapi parameter berbeda dalam satu class.
+
+Overriding terjadi ketika subclass mengganti implementasi method dari superclass dengan nama dan parameter yang sama.
 
 2. [Bagaimana Java menentukan method mana yang dipanggil dalam dynamic binding?]  
-   **Jawaban:** …  
+   **Jawaban:** Java menentukan method yang dipanggil berdasarkan tipe objek aktual yang direferensikan, bukan berdasarkan tipe referensinya. Proses ini dilakukan saat runtime, bukan saat compile time.
 
 3. [Berikan contoh kasus polymorphism dalam sistem POS selain produk pertanian.]  
-   **Jawaban:** …  
+   **Jawaban:** Dalam sistem POS restoran: class MenuItem bisa dioverride oleh subclass Makanan, Minuman, dan Dessert. Ketika getInfo() dipanggil, masing-masing menampilkan informasi berbeda sesuai jenis item (misalnya ukuran porsi atau suhu minuman).
