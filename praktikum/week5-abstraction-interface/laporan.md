@@ -259,24 +259,24 @@ public class MainAbstraction {
 ## Analisis
 
 - Jelaskan bagaimana kode berjalan.
+  
 Program dimulai dari MainAbstraction.java, yang membuat dua objek turunan dari abstract class Pembayaran: yaitu Cash dan EWallet. Karena Pembayaran adalah abstract class, objeknya tidak dapat dibuat langsung. Kelas Cash dan EWallet wajib mengimplementasikan method abstrak biaya() dan prosesPembayaran().
 Objek cash dan ew kemudian di-cast ke interface Receiptable agar bisa memanggil method cetakStruk().
 Pada Cash, metode prosesPembayaran() memeriksa apakah uang tunai mencukupi, dan bila cukup akan menampilkan struk pembayaran dengan kembalian.
 Pada EWallet, metode prosesPembayaran() bergantung pada hasil validasi OTP dari interface Validatable. Jika OTP 6 digit, maka dianggap valid dan transaksi berhasil.
 Terakhir, CreditBy.print() menampilkan identitas pembuat program sebagai bentuk dokumentasi.  
 
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.
+  
 Minggu sebelumnya, fokus pada polymorphism — penggunaan method overriding pada kelas turunan untuk memberikan perilaku berbeda.
-
 Minggu ini, konsep abstraction memperluas hal tersebut dengan menyembunyikan detail implementasi pada abstract class dan mendefinisikan kontrak perilaku melalui interface.
 Abstraction menekankan pada “apa yang harus dilakukan”, bukan “bagaimana melakukannya”.
 Dengan interface, program dapat menggunakan multiple inheritance — misalnya EWallet mengimplementasikan dua interface (Validatable dan Receiptable), yang tidak bisa dilakukan hanya dengan class biasa.
 
-- Kendala yang dihadapi dan cara mengatasinya.  
+- Kendala yang dihadapi dan cara mengatasinya.
+  
 Kendala 1 Awalnya, error muncul karena file interface (Validatable dan Receiptable) berada di package yang berbeda dan belum di-import dengan benar Solusinya Menambahkan import com.upb.agripos.model.kontrak.*; di bagian atas file yang memerlukan.
-
 Kendala 2 Salah ketik pada nama file atau class (Receitable vs Receiptable) Solusinya Menyamakan nama file dan nama class agar sesuai.
-
 Kendala 3 validasi OTP: Program awal tidak memeriksa panjang OTP dengan benar Solusinya Menambahkan kondisi otp.length() == 6 agar lebih realistis.
 
 ---
@@ -290,24 +290,20 @@ Konsep ini juga mendukung prinsip OOP seperti encapsulation, inheritance, dan po
 
 ## Quiz
 1. [Jelaskan perbedaan konsep dan penggunaan abstract class dan interface.]  
-   **Jawaban:** 
-Abstract class digunakan untuk membuat kerangka dasar suatu class yang memiliki state (variabel) dan perilaku umum yang bisa diwariskan. Abstract class bisa memiliki method abstrak (tanpa isi) dan method konkret (dengan isi).
-→ Contoh: Pembayaran yang punya field invoiceNo dan total, serta method totalBayar() yang sudah memiliki implementasi.
-
-Interface digunakan untuk mendefinisikan kontrak perilaku tanpa menyimpan data atau implementasi (kecuali default method sejak Java 8). Interface berfungsi untuk mendefinisikan kemampuan tambahan yang dapat dimiliki oleh berbagai class yang berbeda hierarki.
-→ Contoh: Validatable dan Receiptable, yang mendefinisikan perilaku umum seperti validasi() dan cetakStruk().
+   **Jawaban:**
+   Abstract class digunakan untuk membuat kerangka dasar suatu class yang memiliki state (variabel) dan perilaku umum yang bisa diwariskan. Abstract class bisa memiliki method abstrak (tanpa isi) dan method konkret (dengan isi).
+Contohnya Pembayaran yang punya field invoiceNo dan total, serta method totalBayar() yang sudah memiliki implementasi.
+Interface digunakan untuk mendefinisikan kontrak perilaku tanpa menyimpan data atau implementasi (kecuali default method sejak Java 8). Interface berfungsi untuk mendefinisikan kemampuan tambahan yang dapat dimiliki oleh berbagai class yang berbeda hierarki contoh Validatable dan Receiptable, yang mendefinisikan perilaku umum seperti validasi() dan cetakStruk().
 
 2. [Mengapa multiple inheritance lebih aman dilakukan dengan interface pada Java?]  
-   **Jawaban:** 
-Karena interface tidak membawa state atau implementasi konkret, sehingga tidak menimbulkan konflik pewarisan seperti pada multiple inheritance antar class (misalnya dua class induk memiliki field atau method yang sama).
-Dengan interface, Java hanya mewarisi kontrak perilaku, bukan data atau logika aktual, sehingga aman untuk digabungkan dalam satu class.
-→ Misalnya, EWallet bisa mengimplementasikan Validatable dan Receiptable tanpa risiko bentrok antar kode.
+   **Jawaban:**
+   Karena interface tidak membawa state atau implementasi konkret, sehingga tidak menimbulkan konflik pewarisan seperti pada multiple inheritance antar class (misalnya dua class induk memiliki field atau method yang sama).
+Dengan interface, Java hanya mewarisi kontrak perilaku, bukan data atau logika aktual, sehingga aman untuk digabungkan dalam satu class. Misalnya, EWallet bisa mengimplementasikan Validatable dan Receiptable tanpa risiko bentrok antar kode.
 
 3. [Pada contoh Agri-POS, bagian mana yang paling tepat menjadi abstract class dan mana yang menjadi interface? Jelaskan alasannya.]  
    **Jawaban:** 
 - Abstract class: Pembayaran
-→ Karena Pembayaran memiliki atribut umum (invoiceNo, total) dan sebagian perilaku dasar (totalBayar()), tetapi cara menghitung biaya() dan prosesPembayaran() berbeda untuk setiap jenis pembayaran.
-
+  Karena Pembayaran memiliki atribut umum (invoiceNo, total) dan sebagian perilaku dasar (totalBayar()), tetapi cara menghitung biaya() dan prosesPembayaran() berbeda untuk setiap jenis pembayaran.
 - Interface: Validatable dan Receiptable
-→ Karena keduanya hanya mendefinisikan perilaku tambahan (kemampuan) tanpa menyimpan data. Validatable untuk verifikasi transaksi (seperti OTP atau kode transfer), dan Receiptable untuk mencetak struk transaksi.
+  Karena keduanya hanya mendefinisikan perilaku tambahan (kemampuan) tanpa menyimpan data. Validatable untuk verifikasi transaksi (seperti OTP atau kode transfer), dan Receiptable untuk mencetak struk transaksi.
 Dengan kombinasi ini, program menjadi fleksibel, terstruktur, dan mudah diperluas (misalnya menambah metode pembayaran baru seperti TransferBank tanpa mengubah kode yang sudah ada).
