@@ -57,7 +57,7 @@ package com.upb.agripos;
 
 public class MainCart {
     public static void main(String[] args) {
-        System.out.println("Hello, I am Bunga Maura Aulya-240320562 (Week7-collections)");
+        System.out.println("Hello, I am Rossa Aqila Zahra-240320568 (Week7-collections)");
 
         Product p1 = new Product("P01", "Beras", 50000);
         Product p2 = new Product("P02", "Pupuk", 30000);
@@ -81,7 +81,6 @@ public class MainCart {
 ---
 
 ## Analisis
-(
 1. Jelaskan bagaimana kode berjalan.
 Program dimulai dari kelas MainCart yang memiliki method main() sebagai titik awal eksekusi. Pada awal program, sistem menampilkan identitas praktikan sebagai penanda eksekusi program. Selanjutnya, dibuat dua buah objek Product yang merepresentasikan produk dengan atribut kode produk, nama produk, dan harga. Objek-objek ini kemudian dimasukkan ke dalam objek ShoppingCart yang berfungsi sebagai keranjang belanja. Kelas ShoppingCart menggunakan struktur Collection (List atau Map) untuk menyimpan kumpulan objek Product. Method addProduct() digunakan untuk menambahkan produk ke dalam keranjang, sedangkan printCart() menampilkan daftar produk yang ada di dalam keranjang. Setelah itu, salah satu produk dihapus menggunakan method removeProduct(). Dengan demikian, program menunjukkan proses manipulasi data koleksi berupa penambahan, penampilan, dan penghapusan objek secara dinamis selama runtime.
 
@@ -91,7 +90,6 @@ Pendekatan pada praktikum minggu ini berbeda dengan minggu sebelumnya karena tel
 3. Kendala yang dihadapi dan cara mengatasinya.
 Kendala utama yang dihadapi dalam pengerjaan praktikum ini adalah munculnya error cannot find symbol, yang disebabkan oleh ketidaksesuaian antara deklarasi package, struktur folder, dan penggunaan class antar file. Hal ini membuat compiler Java tidak dapat mengenali class Product dan ShoppingCart saat dipanggil di kelas MainCart. Kendala tersebut diatasi dengan menyamakan deklarasi package pada seluruh file Java serta memastikan struktur direktori sesuai dengan package yang digunakan. Selain itu, dilakukan pengecekan ulang terhadap penulisan nama class dan constructor agar sesuai dengan aturan Java. Setelah perbaikan tersebut dilakukan, program dapat dikompilasi dan dijalankan dengan baik tanpa error.
 
-)
 ---
 
 ## Kesimpulan
@@ -100,7 +98,7 @@ Berdasarkan praktikum yang telah dilakukan, penggunaan Java Collections Framewor
 ---
 
 ## Quiz
-(1. [Jelaskan perbedaan mendasar antara List, Map, dan Set.]  
+1. [Jelaskan perbedaan mendasar antara List, Map, dan Set.]  
    **Jawaban:** List adalah struktur data yang menyimpan elemen secara berurutan dan mengizinkan adanya duplikasi data. Set merupakan struktur data yang tidak mengizinkan duplikasi elemen sehingga setiap data yang disimpan bersifat unik. Sementara itu, Map menyimpan data dalam bentuk pasangan kunci dan nilai (key–value), di mana setiap kunci harus unik dan digunakan untuk mengakses nilai tertentu.
 
 2. [Mengapa ArrayList cocok digunakan untuk keranjang belanja sederhana?]  
@@ -110,4 +108,4 @@ Berdasarkan praktikum yang telah dilakukan, penggunaan Java Collections Framewor
    **Jawaban:** Struktur Set mencegah duplikasi data dengan melakukan pengecekan terhadap elemen yang akan dimasukkan. Jika elemen tersebut sudah ada di dalam Set, maka elemen baru tidak akan ditambahkan. Mekanisme ini umumnya bergantung pada implementasi method equals() dan hashCode() pada objek yang disimpan.
 
 4. Kapan sebaiknya menggunakan Map dibandingkan List? Jelaskan dengan contoh.
-**Jawaban:** Map sebaiknya digunakan ketika data perlu diakses menggunakan kunci tertentu, bukan berdasarkan indeks. Contohnya, dalam sistem keranjang belanja, Map dapat digunakan untuk menyimpan data produk dengan kode produk sebagai kunci dan objek produk sebagai nilai. Dengan pendekatan ini, pencarian produk berdasarkan kode menjadi lebih cepat dan efisien dibandingkan menggunakan List. )
+**Jawaban:** Map sebaiknya digunakan ketika data perlu diakses menggunakan kunci tertentu, bukan berdasarkan indeks. Contohnya, dalam sistem keranjang belanja, Map dapat digunakan untuk menyimpan data produk dengan kode produk sebagai kunci dan objek produk sebagai nilai. Dengan pendekatan ini, pencarian produk berdasarkan kode menjadi lebih cepat dan efisien dibandingkan menggunakan List. 
