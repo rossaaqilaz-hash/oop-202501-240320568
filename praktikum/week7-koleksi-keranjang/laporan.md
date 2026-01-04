@@ -50,7 +50,7 @@ Kasus ini mencerminkan penggunaan struktur data dalam aplikasi nyata seperti POS
 ---
 
 ## Kode Program
-(Kode utama yang dibuat:  
+Kode utama yang dibuat:  
 
 ```java
 package com.upb.agripos;
@@ -70,7 +70,8 @@ public class MainCart {
         cart.printCart();
     }
 }
-)
+```
+
 ---
 
 ## Hasil Eksekusi
