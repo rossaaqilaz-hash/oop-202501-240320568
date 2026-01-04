@@ -56,6 +56,7 @@ Use Case Diagram menjadi dasar perancangan diagram lainnya. Setiap use case kemu
 
 **2. Activity Diagram**
 
+https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/c6e1475601caeb058d52eb9fc545ddf9123146b6/praktikum/week6-uml-solid/screenshots/uml%20Agri-POS-activity%20diagram.png
 
 Fungsi: Activity Diagram digunakan untuk menggambarkan alur proses atau aliran kerja sistem secara berurutan dari awal hingga akhir. Diagram ini menunjukkan langkah-langkah aktivitas, percabangan keputusan, serta kondisi sukses dan gagal dalam proses bisnis.
 
