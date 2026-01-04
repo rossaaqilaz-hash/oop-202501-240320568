@@ -107,5 +107,5 @@ Berdasarkan praktikum yang telah dilakukan, penggunaan Java Collections Framewor
 3. [Bagaimana struktur Set mencegah duplikasi data?]  
    **Jawaban:** Struktur Set mencegah duplikasi data dengan melakukan pengecekan terhadap elemen yang akan dimasukkan. Jika elemen tersebut sudah ada di dalam Set, maka elemen baru tidak akan ditambahkan. Mekanisme ini umumnya bergantung pada implementasi method equals() dan hashCode() pada objek yang disimpan.
 
-4. Kapan sebaiknya menggunakan Map dibandingkan List? Jelaskan dengan contoh.
-**Jawaban:** Map sebaiknya digunakan ketika data perlu diakses menggunakan kunci tertentu, bukan berdasarkan indeks. Contohnya, dalam sistem keranjang belanja, Map dapat digunakan untuk menyimpan data produk dengan kode produk sebagai kunci dan objek produk sebagai nilai. Dengan pendekatan ini, pencarian produk berdasarkan kode menjadi lebih cepat dan efisien dibandingkan menggunakan List. 
+4. [Kapan sebaiknya menggunakan Map dibandingkan List? Jelaskan dengan contoh?.]
+   **Jawaban:** Map sebaiknya digunakan ketika data perlu diakses menggunakan kunci tertentu, bukan berdasarkan indeks. Contohnya, dalam sistem keranjang belanja, Map dapat digunakan untuk menyimpan data produk dengan kode produk sebagai kunci dan objek produk sebagai nilai. Dengan pendekatan ini, pencarian produk berdasarkan kode menjadi lebih cepat dan efisien dibandingkan menggunakan List. 
