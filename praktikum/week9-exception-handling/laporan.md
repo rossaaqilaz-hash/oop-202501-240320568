@@ -31,7 +31,8 @@ Exception → kondisi tidak normal yang dapat ditangani oleh program.
     // penanganan
 } finally {
     // blok yang selalu dijalankan
-}```
+}
+```
 
 ---
 3. Membuat Custom Exception
