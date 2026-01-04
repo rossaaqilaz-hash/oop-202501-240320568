@@ -100,6 +100,9 @@ Sequence Diagram adalah implementasi teknis dari Activity Diagram.
 ---
 
 **4. Class Diagram**
+
+praktikum/week6-uml-solid/screenshots/uml Agri-POS-class diagram.png
+
 Fungsi: Class Diagram digunakan untuk menggambarkan struktur statis sistem, yang meliputi kelas, atribut, method, serta hubungan antar kelas. Diagram ini menjadi blueprint untuk implementasi sistem dalam bentuk kode program. Pada sistem Agri-POS, Class Diagram mencakup kelas-kelas utama seperti:
 
 - Kasir
