@@ -78,6 +78,8 @@ Aktivitas yang berhubungan dengan logika sistem menjadi acuan dalam penentuan me
 ---
 **3. Sequence Diagram**
 
+praktikum/week6-uml-solid/screenshots/uml Agri-POS-sequence diagram.png
+
 Fungsi: Sequence Diagram digunakan untuk menggambarkan urutan interaksi antar objek atau komponen sistem berdasarkan waktu. Diagram ini menampilkan bagaimana pesan dikirim dan diterima antar objek untuk merealisasikan suatu proses.
 
 Pada sistem Agri-POS, Sequence Diagram menggambarkan proses pembayaran secara detail, mulai dari:
