@@ -31,8 +31,8 @@ Agri-POS merupakan sistem kasir berbasis komputer yang dirancang untuk mendukung
 ---
 ## Penjelasan Setiap Diagram
 
-*1. Use Case Diagram*
-[![Uploading uml Agri-POS-use case.png…]](https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/77a4c71e63e2ac2f94d32e5ee40106df90ad18c2/praktikum/week6-uml-solid/screenshots/uml%20Agri-POS-use%20case.png)
+**1. Use Case Diagram**
+(https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/77a4c71e63e2ac2f94d32e5ee40106df90ad18c2/praktikum/week6-uml-solid/screenshots/uml%20Agri-POS-use%20case.png)
 
 
 Fungsi: Use Case Diagram digunakan untuk menggambarkan fungsi-fungsi utama sistem serta interaksi antara aktor dengan sistem Agri-POS. Diagram ini menunjukkan apa saja yang dapat dilakukan oleh pengguna tanpa menjelaskan bagaimana proses tersebut dijalankan secara detail.Pada sistem Agri-POS, aktor utama terdiri dari Kasir dan Admin. Kasir berinteraksi dengan sistem untuk melakukan proses penjualan, sedangkan Admin berfokus pada pengelolaan data dan laporan.
@@ -51,8 +51,9 @@ Use Case Diagram menjadi dasar perancangan diagram lainnya. Setiap use case kemu
 - Diuraikan alur aktivitasnya pada Activity Diagram
 - Dimodelkan interaksi objeknya pada Sequence Diagram
 - Direpresentasikan struktur kelas dan relasinya pada Class Diagram
+---
 
-*2. Activity Diagram*
+**2. Activity Diagram**
 
 
 Fungsi: Activity Diagram digunakan untuk menggambarkan alur proses atau aliran kerja sistem secara berurutan dari awal hingga akhir. Diagram ini menunjukkan langkah-langkah aktivitas, percabangan keputusan, serta kondisi sukses dan gagal dalam proses bisnis.
@@ -73,7 +74,7 @@ Setiap aktivitas pada diagram ini kemudian diterjemahkan menjadi pesan (message)
 Aktivitas yang berhubungan dengan logika sistem menjadi acuan dalam penentuan method pada Class Diagram.
 
 ---
-*3. Sequence Diagram*
+**3. Sequence Diagram**
 
 Fungsi: Sequence Diagram digunakan untuk menggambarkan urutan interaksi antar objek atau komponen sistem berdasarkan waktu. Diagram ini menampilkan bagaimana pesan dikirim dan diterima antar objek untuk merealisasikan suatu proses.
 
@@ -92,8 +93,9 @@ Sequence Diagram adalah implementasi teknis dari Activity Diagram.
 - Objek yang terlibat pada Sequence Diagram harus sesuai dengan kelas yang ada pada Class Diagram.
 - Setiap pesan pada Sequence Diagram harus memiliki representasi method pada Class Diagram.
   
+---
 
-*4. Class Diagram*
+**4. Class Diagram**
 Fungsi: Class Diagram digunakan untuk menggambarkan struktur statis sistem, yang meliputi kelas, atribut, method, serta hubungan antar kelas. Diagram ini menjadi blueprint untuk implementasi sistem dalam bentuk kode program. Pada sistem Agri-POS, Class Diagram mencakup kelas-kelas utama seperti:
 
 - Kasir
