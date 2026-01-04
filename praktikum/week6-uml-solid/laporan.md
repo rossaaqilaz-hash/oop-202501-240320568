@@ -32,6 +32,26 @@ Agri-POS merupakan sistem kasir berbasis komputer yang dirancang untuk mendukung
 
 ## Penjelasan setiap diagram
 1. Use Case Diagram
+praktikum/week6-uml-solid/screenshots/uml Agri-POS-use case.png
+Fungsi: Use Case Diagram digunakan untuk menggambarkan fungsi-fungsi utama sistem serta interaksi antara aktor dengan sistem Agri-POS. Diagram ini menunjukkan apa saja yang dapat dilakukan oleh pengguna tanpa menjelaskan bagaimana proses tersebut dijalankan secara detail.Pada sistem Agri-POS, aktor utama terdiri dari Kasir dan Admin. Kasir berinteraksi dengan sistem untuk melakukan proses penjualan, sedangkan Admin berfokus pada pengelolaan data dan laporan.
+
+Use case utama yang ditampilkan antara lain:
+
+Login
+Kelola produk
+Checkout
+Pembayaran tunai
+Pembayaran e-wallet
+Cetak struk
+Lihat laporan
+Keterkaitan dengan Diagram Lain
+
+Use Case Diagram menjadi dasar perancangan diagram lainnya. Setiap use case kemudian:
+Diuraikan alur aktivitasnya pada Activity Diagram
+Dimodelkan interaksi objeknya pada Sequence Diagram
+Direpresentasikan struktur kelas dan relasinya pada Class Diagram
+
+2. Activity Diagram
 
 
 ## Kesimpulan
