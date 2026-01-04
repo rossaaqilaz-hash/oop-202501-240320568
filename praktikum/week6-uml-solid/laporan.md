@@ -1,60 +1,38 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 6
+Topik: [Desain Arsitektur Sistem dengan UML dan Prinsip SOLID"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Rossa Aqila Zahra]
+- NIM   : [240320568]
+- Kelas : [3DSRA]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
-
----
-
-## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
-
----
+1. Mahasiswa mampu mengidentifikasi kebutuhan sistem ke dalam diagram UML.
+2. Mahasiswa mampu menggambar UML Class Diagram dengan relasi antar class yang tepat.
+3. Mahasiswa mampu menjelaskan prinsip desain OOP (SOLID).
+4. Mahasiswa mampu menerapkan minimal dua prinsip SOLID dalam kode program.
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+
+1. Pemetaan kebutuhan → daftar aktor & use case; gambar Use Case Diagram versi-1.
+2. Activity Diagram proses “Checkout” (lengkap dengan swimlane Kasir/Sistem/Payment Gateway) + skenario normal dan gagal.
+3. Sequence Diagram proses pembayaran (variasi: tunai vs e-wallet, alt saldo tidak cukup).
+4. Class Diagram (atribut/tipe, method, visibility, multiplicity) + mapping prinsip SOLID; revisi konsistensi lintas diagram.
+Setiap iterasi lakukan commit incremental dengan pesan: week6-uml-solid: iterasi-N <deskripsi>.
 
 ---
 
-## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
-
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+## Deskripsi Singkat Sistem Agri-POS
+Agri-POS merupakan sistem kasir berbasis komputer yang dirancang untuk mendukung proses transaksi penjualan pada usaha pertanian. Sistem ini membantu kasir dalam mengelola penjualan produk pertanian, mulai dari pencatatan produk, pengecekan ketersediaan stok, perhitungan total transaksi, hingga proses pembayaran secara tunai maupun non-tunai (e-wallet). Selain itu, Agri-POS mampu memperbarui stok produk secara otomatis setelah transaksi berhasil dan menghasilkan struk pembayaran sebagai bukti transaksi. Dengan adanya sistem ini, proses penjualan menjadi lebih cepat, akurat, dan terintegrasi, sehingga dapat meningkatkan efisiensi operasional dan meminimalkan kesalahan pencatatan pada usaha pertanian.
 ```
-)
+
 ---
 
-## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
----
+## Penjelasan setiap diagram
+1. Use Case Diagram
 
-## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
----
 
 ## Kesimpulan
 (Tuliskan kesimpulan dari praktikum minggu ini.  
