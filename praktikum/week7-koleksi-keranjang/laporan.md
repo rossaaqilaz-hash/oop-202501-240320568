@@ -97,14 +97,18 @@ Berdasarkan praktikum yang telah dilakukan, penggunaan Java Collections Framewor
 ---
 
 ## Quiz
-1. [Jelaskan perbedaan mendasar antara List, Map, dan Set.]  
+1. [Jelaskan perbedaan mendasar antara List, Map, dan Set.]
+   
    **Jawaban:** List adalah struktur data yang menyimpan elemen secara berurutan dan mengizinkan adanya duplikasi data. Set merupakan struktur data yang tidak mengizinkan duplikasi elemen sehingga setiap data yang disimpan bersifat unik. Sementara itu, Map menyimpan data dalam bentuk pasangan kunci dan nilai (key–value), di mana setiap kunci harus unik dan digunakan untuk mengakses nilai tertentu.
 
-2. [Mengapa ArrayList cocok digunakan untuk keranjang belanja sederhana?]  
+2. [Mengapa ArrayList cocok digunakan untuk keranjang belanja sederhana?]
+   
    **Jawaban:** ArrayList cocok digunakan untuk keranjang belanja sederhana karena mampu menyimpan data secara dinamis dan mempertahankan urutan data sesuai dengan proses penambahan. Selain itu, ArrayList memudahkan proses penambahan dan penghapusan item tanpa perlu menentukan ukuran data di awal, sehingga sesuai dengan kebutuhan keranjang belanja yang jumlah itemnya dapat berubah.
 
-3. [Bagaimana struktur Set mencegah duplikasi data?]  
+3. [Bagaimana struktur Set mencegah duplikasi data?]
+   
    **Jawaban:** Struktur Set mencegah duplikasi data dengan melakukan pengecekan terhadap elemen yang akan dimasukkan. Jika elemen tersebut sudah ada di dalam Set, maka elemen baru tidak akan ditambahkan. Mekanisme ini umumnya bergantung pada implementasi method equals() dan hashCode() pada objek yang disimpan.
 
 4. [Kapan sebaiknya menggunakan Map dibandingkan List? Jelaskan dengan contoh?.]
+
    **Jawaban:** Map sebaiknya digunakan ketika data perlu diakses menggunakan kunci tertentu, bukan berdasarkan indeks. Contohnya, dalam sistem keranjang belanja, Map dapat digunakan untuk menyimpan data produk dengan kode produk sebagai kunci dan objek produk sebagai nilai. Dengan pendekatan ini, pencarian produk berdasarkan kode menjadi lebih cepat dan efisien dibandingkan menggunakan List. 
