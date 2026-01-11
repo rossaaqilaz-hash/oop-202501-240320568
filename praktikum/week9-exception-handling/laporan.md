@@ -98,7 +98,9 @@ public class MainExceptionDemo {
 ---
 
 ## Hasil Eksekusi
-https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/e8baaf4b7ba5efa1794c580844d902720e8d1e42/praktikum/week9-exception-handling/screenshots/Output_ExceptionDemo.png
+
+![Output Exception Demo](../week9-exception-handling/screenshots/Output_ExceptionDemo.png)
+
 ---
 
 ## Analisis
