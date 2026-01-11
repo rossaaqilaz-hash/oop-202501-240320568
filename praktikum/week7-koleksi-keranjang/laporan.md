@@ -75,8 +75,9 @@ public class MainCart {
 ---
 
 ## Hasil Eksekusi
-(https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/1741b5b8bf638bfedfa6f89d3901b9c8094cae12/praktikum/week7-koleksi-keranjang/screenshots/hasil%20collections.png)
-)
+
+![Hasil Collections](../praktikum/week7-koleksi-keranjang/screenshots/hasil collections.png)
+
 ---
 
 ## Analisis
