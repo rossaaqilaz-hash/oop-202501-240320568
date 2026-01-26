@@ -1,0 +1,44 @@
+package com.upb.agripos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.upb.agripos.controller.ProductController;
+import com.upb.agripos.dao.ProductDAOImpl;
+import com.upb.agripos.service.ProductService;
+import com.upb.agripos.view.ProductFormView;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class AppJavaFX extends Application {
+
+    @Override
+    public void start(Stage stage) {
+
+        try {
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5432/agripos",
+                    "postgres",
+                    "postgres"
+            );
+
+            ProductService service = new ProductService(new ProductDAOImpl(conn));
+            ProductFormView view = new ProductFormView();
+            new ProductController(service, view);
+
+            stage.setScene(new Scene(view, 400, 450));
+            stage.setTitle("GUI Produk Agri-POS");
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("GAGAL MENJALANKAN APLIKASI");
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
