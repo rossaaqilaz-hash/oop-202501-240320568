@@ -2,52 +2,78 @@
 Topik: Integrasi Individu (OOP + Database + GUI)
 
 ## Identitas
-- Nama  : [Rossa Aqila Zahra]
-- NIM   : [240320568]
-- Kelas : [3DSRA]
+- Nama  : Rossa Aqila Zahra
+- NIM   : 240320568
+- Kelas : 3DSRA
 
 ---
 
 ## Tujuan
-Setelah mengikuti praktikum ini, mahasiswa mampu:
-1. Mengintegrasikan konsep OOP (Bab 1–5) ke dalam satu aplikasi yang utuh.
-2. Mengimplementasikan rancangan UML + SOLID (Bab 6) menjadi kode nyata.
-3. Mengintegrasikan Collections + Keranjang (Bab 7) ke alur aplikasi.
-4. Menerapkan exception handling (Bab 9) untuk validasi dan error flow.
-5. Menerapkan pattern + unit testing (Bab 10) pada bagian yang relevan.
-6. Menghubungkan aplikasi dengan database via DAO + JDBC (Bab 11).
-7. Menyajikan aplikasi berbasis JavaFX (Bab 12–13) yang terhubung ke backend.
+- Mampu mengintegrasikan konsep OOP (Bab 1-5) ke dalam satu aplikasi yang utuh.
+- Mampu mengimplementasikan rancangan UML + SOLID (Bab 6) menjadi kode nyata.
+- Mampu mengintegrasikan Collections + Keranjang (Bab 7) ke alur aplikasi.
+- Mampu menerapkan exception handling (Bab 9) untuk validasi dan error flow.
+- Mampu menerapkan pattern + unit testing (Bab 10) pada bagian yang relevan.
+- Mampu menghubungkan aplikasi dengan database via DAO + JDBC (Bab 11).
+- Mampu menyajikan aplikasi berbasis JavaFX (Bab 12-13) yang terhubung ke backend.
 
 ---
 
-## Dasar Teori
-1. Object Oriented Programming (OOP) digunakan untuk membangun aplikasi berbasis class dan objek agar kode terstruktur, modular, dan mudah dikembangkan.
-2. Arsitektur berlapis (MVC + Service + DAO) diterapkan untuk memisahkan tampilan, logika aplikasi, dan akses data sesuai prinsip SOLID.
-3. DAO dan JDBC digunakan untuk menghubungkan aplikasi Java dengan database PostgreSQL dan menjalankan operasi CRUD.
-4. Collections Framework dimanfaatkan untuk mengelola data keranjang belanja secara dinamis.
-5. Exception handling, design pattern, dan unit testing digunakan untuk validasi, pengelolaan koneksi, dan pengujian logika non-UI.
+## Ringkasan Aplikasi
+
+**Agri-POS** adalah aplikasi Point of Sale (kasir sederhana) berbasis JavaFX yang mengintegrasikan konsep OOP, database PostgreSQL, dan GUI.
+
+Fitur yang didukung:
+1. Manajemen Produk: Menampilkan, menambah, dan menghapus produk dari database.
+2. Keranjang Belanja: Menambahkan produk ke keranjang, menampilkan daftar item, menghitung total, clear cart, dan checkout dengan itemized receipt.
+3. Validasi & Exception Handling: Validasi input (kosong, format angka, stok tersedia) dengan IllegalArgumentException dan Exception.
+
+---
+
+## Keterangan Integrasi Bab 1-13
+
+Berikut integrasi konsep OOP dari Bab 1-13 dalam aplikasi Agri-POS:
+
+- **Bab 1**: Menampilkan identitas di console: "Hello World, I am Difa Rizkiana-240320564". Setup project Java dengan Maven.
+- **Bab 2**: Class Product dengan enkapsulasi (getter/setter). Class Cart, CartItem sebagai model domain.
+- **Bab 3**: Exception extend dari Exception class.
+- **Bab 4**: Interface ProductDAO dengan implementasi JdbcProductDAO (polymorphism).
+- **Bab 5**: Interface ProductDAO sebagai abstraksi data access. Implementasi konkret JdbcProductDAO.
+- **Bab 6**: SOLID principles - SRP (setiap class single responsibility), OCP (interface terbuka extension), LSP (implementasi replaceable), ISP (interface tidak memaksa unused methods), DIP (View → Controller → Service → DAO).
+- **Bab 7**: Cart menggunakan Map<String, CartItem> untuk efisiensi lookup. List<CartItem> untuk return items. Collections digunakan dalam alur aplikasi.
+- **Bab 9**: Exception handling di Service layer (IllegalArgumentException), Controller dengan try-catch, error flow ke user via Alert.
+- **Bab 10**: MVC Pattern (Model-View-Controller separation). JUnit Testing (CartServiceTest).
+- **Bab 11**: JDBC connection PostgreSQL via DriverManager. CRUD operations via ProductDAO interface. PreparedStatement untuk SQL injection prevention.
+- **Bab 12-13**: JavaFX application dengan TableView dan ListView. Event-driven programming. MVC architecture. Itemized receipt pada checkout.
 
 ---
 
 ## Langkah Praktikum
-1. Melanjutkan proyek dari Bab 1–13 dan menyiapkan struktur folder sesuai ketentuan Bab 14.
-2. Mengimplementasikan class model (Product, Cart, CartItem) berbasis OOP.
-3. Menerapkan DAO dan Service untuk operasi CRUD produk menggunakan JDBC.
-4. Mengimplementasikan fitur keranjang belanja menggunakan Collections.
-5. Menerapkan validasi input dan exception handling.
-6. Membuat antarmuka aplikasi menggunakan JavaFX dan menghubungkannya dengan Controller.
-7. Menerapkan satu design pattern dan membuat satu unit test JUnit.
-8. Menjalankan aplikasi dan mendokumentasikan hasil eksekusi.
+
+1. Setup database `agripos` dan tabel `products`, insert sample data.
+2. Buat Model layer (Product, Cart, CartItem) dengan Collections.
+3. Buat DAO layer (ProductDAO interface, JdbcProductDAO implementation).
+4. Buat Service layer (ProductService, CartService) dengan validasi.
+5. Buat Controller (PosController) dengan event handlers dan exception handling.
+6. Buat View (PosView) dengan JavaFX components.
+7. Buat Main (AppJavaFX) dengan identity log dan dependency injection.
+8. Buat Unit Test (CartServiceTest).
+9. Commit dan push dengan pesan `week14-integrasi-individu`.
 
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
-
+1. AppJavaFX.java
 ```java
 package com.upb.agripos;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 import com.upb.agripos.controller.PosController;
+import com.upb.agripos.dao.JdbcProductDAO;
+import com.upb.agripos.service.CartService;
+import com.upb.agripos.service.ProductService;
 import com.upb.agripos.view.PosView;
 
 import javafx.application.Application;
@@ -57,52 +83,108 @@ import javafx.stage.Stage;
 public class AppJavaFX extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
-        PosController controller = new PosController();
-        PosView view = new PosView(controller, primaryStage);
+    public void start(Stage stage) {
+        try {
+            System.out.println("Hello World, I am Difa Rizkiana-240320564");
 
-        Scene scene = new Scene(view.getRoot(), 1000, 600);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("AgriPOS - Rossa Aqila Zahra");
-        primaryStage.show();
+            Connection connection = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/agripos",
+                "postgres",
+                "postgres"
+            );
+            
+            JdbcProductDAO productDAO = new JdbcProductDAO(connection);
+            ProductService productService = new ProductService(productDAO);
+            CartService cartService = new CartService();
+            PosView view = new PosView();
+            new PosController(productService, cartService, view);
+            
+            stage.setScene(new Scene(view, 900, 600));
+            stage.setTitle("Agri-POS - Difa Rizkiana Fauziyah 240320564");
+            stage.setOnCloseRequest(e -> {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                    System.out.println("Application closed successfully.");
+                } catch (Exception ex) {
+                    System.err.println("Error closing database connection: " + ex.getMessage());
+                }
+            });
+            stage.show();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 }
-
 ```
-)
 
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](![alt text](image.png))
 
-![Screenshot hasil]()
-)
+### Screenshot 1: Aplikasi Utama
+![Screenshot Aplikasi](screenshots/app_main.png)
+
+### Screenshot 2: JUnit Test Results
+![Screenshot JUnit](screenshots/junit_result.png)
+
+---
+
+## Artefak UML
+
+Aplikasi menggunakan UML dari Bab 6 yang diupdate untuk integrasi:
+
+- **Use Case**: UC-Produk (Tambah, Lihat, Hapus), UC-Cart (Add to Cart, Clear, Checkout).
+- **Class Diagram**: Menunjukkan layer AppJavaFX → PosController ↔ PosView, ProductService + CartService, ProductDAO (interface) → JdbcProductDAO, Cart → CartItem → Product.
+- **Sequence Diagram**: Tambah Produk (User → View → Controller → Service → DAO → DB).
+- **Activity Diagram**: Tambah ke Keranjang dengan validasi selection dan quantity.
+
+---
+
+## Tabel Traceability Bab 6 → Implementasi
+
+| Artefak | Referensi | Handler/Trigger | Controller/Service | DAO | Dampak |
+|---------|-----------|-----------------|-------------------|-----|--------|
+| Use Case | UC-Produk-01 Tambah | Button "Add Product" | `PosController.handleAddProduct()` → `ProductService.insert()` | `ProductDAO.insert()` | DB insert + TableView reload |
+| Use Case | UC-Produk-02 Hapus | Button "Delete Product" | `PosController.handleDeleteProduct()` → `ProductService.delete(code)` | `ProductDAO.delete(code)` | DB delete + TableView reload |
+| Use Case | UC-Produk-03 Lihat | Application startup + Refresh | `PosController.loadProducts()` → `ProductService.getAll()` | `ProductDAO.findAll()` | TableView populated |
+| Use Case | UC-Cart-01 Tambah ke Keranjang | Button "Add to Cart" | `PosController.handleAddToCart()` → `CartService.addItem()` | - | Cart updated + ListView + Total |
+| Use Case | UC-Cart-02 Clear Cart | Button "Clear Cart" | `PosController.handleClearCart()` → `CartService.clearCart()` | - | Cart cleared + UI reset |
+| Use Case | UC-Cart-03 Checkout | Button "Checkout" | `PosController.handleCheckout()` → `CartService.calculateTotal()` | - | Show itemized receipt + Clear cart |
+| Sequence | SD-Produk-01 Insert | Form submit | `PosController` → `ProductService` → `ProductDAO` → DB | JDBC INSERT | Product added to DB |
+| Sequence | SD-Produk-02 Delete | Delete button | `PosController` → `ProductService` → `ProductDAO` → DB | JDBC DELETE | Product removed |
+| Activity | AD-Cart-01 Add to Cart | Select + Quantity + Add | `PosController` → validate → `CartService` → `Cart` | - | Item in cart |
+| Class | CLS-Model Product | N/A | Used by all layers | Passed to DAO | Data entity |
+| Class | CLS-Service ProductService | N/A | Business logic validation | Calls DAO | Service layer |
+| Class | CLS-DAO ProductDAO | N/A | Interface abstraction | Implemented by JDBC | Data access |
+| Pattern | MVC Pattern | N/A | View-Controller-Service separation | Service-DAO layer | Clean architecture |
 
 ---
 
 ## Analisis
 
-- Jelaskan bagaimana kode berjalan.
+### 1. Cara Kerja Kode
 
-    Aplikasi Agri-POS berjalan dengan alur berlapis, dimulai dari View (JavaFX) yang menerima input pengguna, kemudian diteruskan ke Controller untuk mengatur alur aplikasi. Selanjutnya, Service menangani logika bisnis seperti validasi dan pengelolaan keranjang, sedangkan DAO bertugas melakukan operasi CRUD ke database PostgreSQL melalui JDBC. Data yang diperoleh kemudian ditampilkan kembali pada antarmuka JavaFX.
+Program ini mengintegrasikan konsep OOP Bab 1-13 dalam aplikasi Agri-POS dengan arsitektur MVC. Layer Model memiliki Product (data entity), Cart (menggunakan Map<String, CartItem> untuk efficient lookup), dan CartItem. Layer DAO menggunakan interface ProductDAO dan implementasi JdbcProductDAO dengan PreparedStatement. Layer Service (ProductService, CartService) melakukan validasi dengan IllegalArgumentException sebelum memanggil DAO. Layer Controller (PosController) sebagai mediator View-Service, menerapkan DIP (View tidak akses DAO langsung). Layer View (PosView) hanya berisi JavaFX UI components tanpa logika SQL. AppJavaFX menampilkan identity log dan melakukan dependency injection DAO → Service → Controller → View.
 
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+### 2. Perbedaan dengan Praktikum Sebelumnya
 
-    Pendekatan pada praktikum minggu ini berbeda dengan minggu sebelumnya karena seluruh konsep dari beberapa bab diintegrasikan menjadi satu aplikasi utuh. Pada minggu sebelumnya, implementasi masih terpisah dan fokus pada satu konsep tertentu, sedangkan pada Bab 14 diterapkan arsitektur lengkap dengan pemisahan layer, penggunaan database, GUI, serta pengujian unit.
+Week 14 melakukan integrasi end-to-end dari semua konsep OOP. Week sebelumnya fokus topik spesifik, sedangkan week 14 menggabungkan semuanya dengan arsitektur konsisten. SOLID principles (khususnya DIP) diterapkan ketat, exception handling terstruktur (validation di Service, database di DAO), GUI terintegrasi penuh dengan database via Controller, Collections digunakan nyata untuk keranjang belanja, dan unit testing komprehensif.
 
-- Kendala yang dihadapi dan cara mengatasinya.  
+### 3. Kendala yang Dihadapi
 
-    Kendala yang dihadapi antara lain kesalahan koneksi database, pengaturan alur komunikasi antar layer, dan validasi input pada GUI. Kendala tersebut diatasi dengan pengecekan konfigurasi JDBC, penyesuaian pemanggilan metode sesuai arsitektur MVC + Service + DAO, serta penerapan exception handling untuk menangani kesalahan input dan runtime.
+Kendala utama adalah memastikan dependency flow (View → Controller → Service → DAO) tanpa skip layer, solusinya code review setiap class. Exception handling di multiple layers diatasi dengan validation di Service (throw IllegalArgumentException) dan try-catch di Controller untuk Alert ke user. Format itemized receipt diatasi dengan StringBuilder dan String.format(). Testing CartService dengan stock validation diatasi dengan mock Product objects di @BeforeEach.
 
 ---
 
 ## Kesimpulan
-Tuliskan kesimpulan dari praktikum minggu Praktikum Bab 14 berhasil mengintegrasikan konsep OOP, database, dan GUI ke dalam satu aplikasi yang utuh. Dengan menerapkan arsitektur berlapis, penggunaan Collections, exception handling, design pattern, dan unit testing, aplikasi menjadi lebih terstruktur, mudah dipelihara, dan siap dikembangkan lebih lanjut.
+
+Program ini berhasil mengintegrasikan konsep OOP Bab 1-13 ke dalam aplikasi Agri-POS yang fungsional. Arsitektur MVC dengan pemisahan layer jelas memenuhi prinsip SOLID (khususnya DIP). Collections Framework (Map dan List) digunakan efektif dalam Cart. Exception handling diterapkan benar (IllegalArgumentException untuk validation, Exception untuk database errors). Unit testing memastikan business logic berjalan benar. Database integration dengan PostgreSQL via JDBC dan PreparedStatement untuk CRUD operations berfungsi baik. JavaFX UI menyediakan interface user-friendly dengan itemized receipt pada checkout. Implementasi ini menunjukkan bagaimana prinsip OOP diterapkan nyata dalam membangun aplikasi terstruktur, maintainable, dan mudah dikembangkan.
 
 ---
