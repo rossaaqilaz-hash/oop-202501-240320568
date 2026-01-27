@@ -96,7 +96,7 @@ public class AppJavaFX extends Application {
 
 ## Hasil Eksekusi
 
-![Output_TableViewProduct](screenshots/Output_TableViewProduct.png)
+[![Output_TableViewProduct](screenshots/Output_TableViewProduct.png)](https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/5d60050030e13553388bb5135a5091a463a660ad/praktikum/week13-gui-lanjutan/week13-gui-lanjutan/screenshots/Output.png)
 ---
 
 ## Analisis
