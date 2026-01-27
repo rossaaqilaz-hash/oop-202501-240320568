@@ -132,7 +132,7 @@ public class AppJavaFX extends Application {
 https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/666de8a107d75e39a45209559997de778ac0ca36/praktikum/week14-integrasi-individu/screenshots/image.jpeg
 
 ### Screenshot 2: JUnit Test Results
-![Screenshot JUnit](screenshots/junit_result.png)
+https://github.com/rossaaqilaz-hash/oop-202501-240320568/blob/0832a328c6db5814815a97fedcec3d72522139d3/praktikum/week14-integrasi-individu/screenshots/testing.png
 
 ---
 
